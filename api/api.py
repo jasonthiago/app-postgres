@@ -7,14 +7,15 @@ from datetime import date, datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
+app = Flask(__name__)
+
 @app.route("/")
 def hello():
-    return "Benvido a API FIAP!\n"
+    return "Olá Mundo!\n"
 
 @app.route("/Teste")
 def Teste():
     return "Hello World!\n"
 
 if __name__ == "__main__":
-    #teste()
     app.run(host='0.0.0.0',debug=True)

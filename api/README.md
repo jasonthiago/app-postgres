@@ -1,11 +1,14 @@
-# Api Documentation
+# API Documentation
 
-## Building Docker Image
+### Building Docker Image
 ```bash
 docker build -t my-api .
 ```
 
-## Runnint the container
+### Running the container
 ```bash
-docker run my-api
+docker run -p 5000:5000 my-api
 ```
+
+### Testing on Browser
+http://localhost:5000
