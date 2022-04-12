@@ -11,11 +11,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Olá Mundo!\n"
+    return "Hello World!\n"
 
 @app.route("/Teste")
 def Teste():
-    return "Hello World!\n"
+    return "Rota de Teste... Incluir SELECT Postgres...\n"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',debug=True)
