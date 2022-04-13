@@ -1,13 +1,13 @@
 version: '2'
 services:
     api:
-        build: api/.
+        image: gmartini97/galaticos:latest
         ports:
           - "5000:5000"
         depends_on:
           - postgres
     postgres:
-        build: postgres/.
+        image: postgres
         restart: always
         environment: 
           - POSTGRES_USER=postgres
