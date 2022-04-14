@@ -18,22 +18,10 @@ services:
           - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
           # copy the sql script to fill tables
           - ./sql/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
-        networks:
-          vpcbr:
-           ipv4_address: 10.5.0.5
     api:
-        image: gmartini97/galaticos
+        #image: gmartini97/galaticos
+        build: api/.
         ports:
           - "5000:5000"
         depends_on:
           - postgres
-        networks:
-          vpcbr:
-           ipv4_address: 10.5.0.6
-networks:
-  vpcbr:
-    driver: bridge
-    ipam:
-     config:
-       - subnet: 10.5.0.0/16
-         gateway: 10.5.0.1
