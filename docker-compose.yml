@@ -1,7 +1,7 @@
 version: '2'
 services:
     postgres:
-        image: postgres:10
+        image: jasonthiago/postgres_galaticos
         restart: always
         environment:
           - POSTGRES_USER=postgres
@@ -20,7 +20,8 @@ services:
           - ./sql/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
     api:
         #image: gmartini97/galaticos
-        build: api/.
+        #build: api/.
+        image: jasonthiago/api_galaticos
         ports:
           - "5000:5000"
         depends_on:
